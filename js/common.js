@@ -7,5 +7,14 @@ head.ready(function() {
 		$(".js-popup").hide();
 	});
 
-	console.log($('body').html());
+// cycle init
+
+	$(".js-slider").cycle({
+		timeout: 4000,
+		slides: '> div',
+		pager: '.cycle-pager'
+	});
+
+
+
 });
