@@ -41,17 +41,55 @@
 // 	font-family: "book",arial,sans-serif 
 +font(loveloblack, lovelo_black-webfont)  
 =loveloblack
-	font-family: "loveloblack",arial,sans-serif 	
+	font-family: "loveloblack",arial,sans-serif
+=justify
+	text-align: justify
+	line-height: 0
+	font-size: 1px
+	text-justify: newspaper
+	zoom: 1
+	text-align-last: justify
+	&:after
+		content: ""
+		display: inline-block
+		width: 100%
+		height: 0px
+		visibility: hidden
+		overflow: hidden
+=justify-child
+	display: inline-block
+	line-height: normal
+	vertical-align: top
+	font-size: 12px	 	
 
 body
 	font-size: 12px 
-	font-family: Arial, sans-serif 
+	font-family: 'Myriad Pro', sans-serif 
 	line-height: 1.4
 .container
 	width: 960px
 	margin: 0 auto
 	padding: 0 30px  
-
+.h1
+	font-size: 60px
+	+loveloblack
+	text-align: center
+	color: #fff
+.h2
+	font-size: 45px
+	+loveloblack
+	text-align: center
+	color: #fff
+	&.h2_dark
+		color: #4c4c4d
+.h3
+	font-size: 28px
+	+loveloblack
+	text-align: center
+	color: #fff				
+	&.h3_dark
+		color: #4c4c4d
+		
 // common blocks      
 .header-wrap
 	height: 122px
@@ -73,8 +111,15 @@ body
 			width: 100%
 			height: 100%
 	&__topper
+		position: relative
 		+clr
-		padding-top: 20px			  
+		padding-top: 20px
+.logo
+	position: absolute
+	top: 43px
+	left: 50%
+	margin-left: -87px
+	+s(logo) 					  
 .lang 
 	float: left
 	&__list
@@ -100,10 +145,12 @@ body
 .menu
 	&__list
 		text-align: center
+		margin: 0 -13px
+		padding-top: 20px 
 	&__item
 		display: inline-block
 		vertical-align: middle
-		margin: 0 12px
+		margin: 0 13px
 		a
 			font-size: 18px
 			color: #555556
@@ -113,30 +160,39 @@ body
 			+transition(color 200ms)
 			&:hover
 				color: #00b0b1
-			&.logo
-				display: block
-				+s(logo)
-				margin: 0 7px
+	&__logo
+		width: 174px			
 				
 // slider
 .slider-wrap
 	position: relative
-	height: 578px
+	max-height: 578px
 	overflow: hidden
 .slider
 	position: relative
 	&__item
+		position: relative
 		width: 100%
-		height: 578px
 	&__bg
-		position: absolute
-		top: 0
-		left: 0
-		bottom: 0
-		right: 0
+		height: 100%
+		font-size: 0 
 		img
 			width: 100%
 			height: auto
+	&__inner
+		position: absolute
+		top: 0
+		left: 50%
+		width: 960px
+		text-align: center
+		padding-top: 250px
+		margin-left: -480px
+		.h1
+			margin-bottom: 45px
+		p
+			text-align: center
+			color: #fff
+			font-size: 16px	  		
 .cycle-pager
 	position: absolute
 	bottom: 25px
@@ -153,9 +209,231 @@ body
 		margin: 0 2px
 		font-size: 0
 		&.cycle-pager-active
-			background: #b9b5b5			  	
-			
-			  
+			background: #b9b5b5
+.join
+	display: inline-block
+	width: 242px
+	height: 49px
+	line-height: 49px
+	margin-bottom: 40px
+	border: 2px solid #fff
+	text-align: center
+	+loveloblack
+	font-size: 28px
+	color: #fff
+	text-transform: uppercase
+	text-decoration: none
+	&:hover
+		background: url(../img/join.png) 0 0 no-repeat
+		font-size: 0
 
-			
+// services
+.services
+	background: #f5f5f5
+	padding: 10px 0 40px
+	.h2
+		margin-bottom: 15px
+	&__list
+		+justify
+	&__item
+		position: relative
+		+justify-child
+		width: 225px
+		height: 386px
+		background: #FFF
+		&:before
+			content: ""
+			position: absolute
+			top: 0
+			right: 0
+			+arr(20, 25, #f5f5f5, tr)
+		&:after
+			content: ""
+			position: absolute
+			bottom: 0
+			left: 0
+			+arr(40, 50, #f5f5f5, bl)	 
+	&__title
+		height: 115px
+		padding: 14px
+		+box 
+		background: #4bc4cf
+		text-align: left
+		line-height: 1.1  
+		+loveloblack
+		color: #fff
+		text-transform: uppercase
+		font-size: 0px
+		&:before
+			content: ""
+			display: inline-block
+			width: 0
+			height: 100%
+			vertical-align: middle 
+		span
+			display: inline-block
+			vertical-align: middle
+			font-size: 28px	
+	&__content
+		padding: 12px
+		font-size: 16px
+		color: #4c4c4d
+		text-align: left
+		line-height: 1.4
+
+// features
+.features
+	padding: 10px 0 40px
+	background: url(../img/features.jpg)
+	+cover 				  
+	&__inner
+		position: relative
+		+clr
+	&__text
+		float: left
+		width: 45%
+		padding-right: 5%  
+		padding-top: 50px
+		.h3
+			margin-bottom: 25px
+		p
+			margin-bottom: 25px 		
+			color: #fff
+			font-size: 16px
+	&__img
+		float: right
+		padding-right: 90px
+		font-size: 0	
 		
+// rebill
+.rebill
+	padding: 45px 0
+	background: url(../img/rebill.jpg)
+	+cover
+	&__inner
+		position: relative
+		+clr
+	&__text
+		float: right
+		width: 45%
+		.h3
+			margin-bottom: 15px
+		p
+			margin-bottom: 15px
+			color: #fff
+			font-size: 16px
+	&__img
+		font-size: 0		
+			
+// payout
+.payout
+	padding: 167px 0 30px
+	background: url(../img/cards.jpg)
+	+cover
+	&__inner
+		+clr
+	&__text
+		float: left
+		width: 45% 
+		.h3
+			margin-bottom: 15px
+		p
+			margin-bottom: 15px
+			color: #fff
+			font-size: 16px
+	&__img
+		position: relative
+		float: left
+		width: 55%
+		font-size: 0
+		img
+			position: relative
+			left: -75px
+			top: -20px
+			
+// apply
+.apply
+	padding: 35px 0 40px
+	background: #f5f5f5
+	.h3
+		margin-bottom: 20px  				
+	&__join
+		text-align: center
+		input, button
+			display: inline-block
+			vertical-align: middle
+	&__input
+		width: 407px
+		height: 53px
+		border: 1px solid #5d9cae
+		margin-right: 3px
+		background: #fff
+		padding: 0 10px
+		font-family: 'Myriad Pro', sans-serif
+		font-size: 18px
+		color: #4c4c4d  
+	&__btn
+		width: 125px
+		height: 55px
+		border: 1px solid #5d9cae
+		background: #4ec0b4
+		+loveloblack
+		font-size: 28px
+		color: #fff
+		
+// clients
+.clients
+	padding: 40px 0 0px
+	.h2
+		text-align: left
+		margin-bottom: 60px
+	&__list
+		font-size: 0
+	&__item
+		display: inline-block
+		vertical-align: top
+		width: 50%
+		+clr
+		margin-bottom: 50px
+	&__img
+		position: relative
+		float: left
+		width: 135px
+		height: 115px
+		overflow: hidden
+		&:before
+			content: ""
+			position: absolute
+			top: 0px
+			right: 0px
+			+arr(15, 15, #fff, br)
+		&:after
+			content: ""
+			position: absolute
+			top: 15px
+			right: 0
+			width: 15px
+			bottom: 0
+			background: #fff
+		img
+			width: 100%
+			min-height: 100% 	 	 			  
+	&__info
+		float: left
+		width: 330px 
+		padding-left: 5px
+		padding-right: 10px 
+		font-size: 16px
+		color: #4c4c4d
+		p
+			margin-bottom: 25px
+	&__name
+		color: #fa5757
+
+// team
+.team
+	padding: 25px 0 50px 
+	background: #4ec4cb
+	+background-image(linear-gradient(left, #5ac8d8 0%, #38bcb2 100%))
+	.h2
+		margin-bottom: 30px 
