@@ -1,3 +1,18 @@
+function viewport(){
+	var e = window, a = 'inner';
+	if ( !( 'innerWidth' in window ) ){
+		a = 'client';
+		e = document.documentElement || document.body;
+	}
+	return { width : e[ a+'Width' ] , height : e[ a+'Height' ] }
+} 
+viewport();
+$(window).resize(function(){
+	viewport();	
+});
+
+var window_width = viewport().width;
+
 head.ready(function() {
 
 	var agent = navigator.userAgent,
@@ -15,6 +30,75 @@ head.ready(function() {
 		pager: '.cycle-pager'
 	});
 
+// select
+    function select() {
+        $(".js-select").each(function(){
+            var select_list = $(this).find(".js-select-list");
+            var text = select_list.find("li").first().text();
+            select_list.hide();
+            $(this).click(function(event){
+                if ($(this).hasClass("is-active")) {
+                    $(this).removeClass("is-active");
+                    select_list.slideUp("fast");
+                }
+                else {
+                    $(".js-select").removeClass("is-active");
+                    $(".js-select-list").hide();
+                    select_list.slideDown("fast");
+                    $(this).addClass("is-active");
+                }
+                event.stopPropagation();
+            });
+            select_list.find("li").click(function(event) {
+                var id = $(this).attr("data-id");
+                var text = $(this).text();
+                $(this).parent().parent().find(".js-select-text").text(text);
+                $(this).parent().parent().find(".js-select-input").val(id);
+                $(this).parent().hide();
+                $(this).parents(".js-select").removeClass("is-active");
+                event.stopPropagation();
+                return false;
+            });
+            $(".help").on('click', function(event){
+                $(".js-select-list").hide();
+                event.stopPropagation();
+            });
+        });
+
+    }
+    select();
+    $('.js-select').click(function(event){
+        event.stopPropagation();
+    });
+
+// menu dropdown
+	
+	
+	
+	function menu_dropdown() {
+		var btn = $(".js-menu-btn");
+		var menu = $(".js-menu");
+		
+		if (window_width <= 1024){
+			menu.hide();
+			btn.show();	
+			btn.on('click', function(){
+				$(this).toggleClass('is-active');
+				menu.toggleClass('is-open').toggle();
+			});
+		}
+		else{
+			menu.show();
+			btn.hide();
+		}
+	}
+	menu_dropdown();
 
 
+	$(window).scroll(function(){
+    	
+    });
+	$(window).resize(function(){
+    	menu_dropdown();
+    });
 });
