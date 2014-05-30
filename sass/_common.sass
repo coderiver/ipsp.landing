@@ -228,6 +228,8 @@ body
 		text-align: center
 		padding-top: 250px
 		margin-left: -480px
+		+r(w1024)
+			padding-top: 180px
 		.h1
 			margin-bottom: 45px
 			+gpu
@@ -283,6 +285,8 @@ body
 		width: 225px
 		height: 386px
 		background: #FFF
+		+r(w1024)
+			width: 200px
 		&:before
 			content: ""
 			position: absolute
@@ -315,7 +319,9 @@ body
 		span
 			display: inline-block
 			vertical-align: middle
-			font-size: 28px	
+			font-size: 28px
+			+r(w1024)
+				font-size: 24px 	
 	&__content
 		padding: 12px
 		font-size: 16px
@@ -470,6 +476,10 @@ body
 		color: #4c4c4d
 		p
 			margin-bottom: 25px
+		+r(w1024)
+			width: 260px
+			p
+				margin-bottom: 10px	
 	&__name
 		color: #fa5757
 
@@ -491,6 +501,8 @@ body
 		height: 164px
 		margin-bottom: 15px	
 		overflow: hidden
+		+r(w1024)
+			width: 200px
 		&:before
 			content: ""
 			position: absolute
@@ -526,8 +538,11 @@ body
 	&__item
 		+justify-child
 		width: 210px
+		+r(w1024)
+			width: 200px
 	&__img
 		text-align: center
+		margin-bottom: 15px
 	.h3
 		text-align: left
 		margin-bottom: 10px

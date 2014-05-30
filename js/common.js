@@ -11,7 +11,7 @@ $(window).resize(function(){
 	viewport();	
 });
 
-var window_width = viewport().width;
+
 
 head.ready(function() {
 
@@ -73,11 +73,10 @@ head.ready(function() {
 
 // menu dropdown
 	
-	
-	
 	function menu_dropdown() {
 		var btn = $(".js-menu-btn");
 		var menu = $(".js-menu");
+		var window_width = viewport().width;
 		
 		if (window_width <= 1024){
 			menu.hide();
@@ -98,6 +97,7 @@ head.ready(function() {
 	$(window).scroll(function(){
     	
     });
+
 	$(window).resize(function(){
     	menu_dropdown();
     });
