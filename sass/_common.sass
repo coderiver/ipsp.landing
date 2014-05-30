@@ -230,6 +230,8 @@ body
 		margin-left: -480px
 		+r(w1024)
 			padding-top: 180px
+		+r(w900)
+			padding-top: 100px	
 		.h1
 			margin-bottom: 45px
 			+gpu
@@ -279,6 +281,8 @@ body
 		margin-bottom: 15px
 	&__list
 		+justify
+		+r(w900)
+			padding: 0 10% 
 	&__item
 		position: relative
 		+justify-child
@@ -287,6 +291,9 @@ body
 		background: #FFF
 		+r(w1024)
 			width: 200px
+		+r(w900)
+			width: 255px
+			margin-bottom: 24px	
 		&:before
 			content: ""
 			position: absolute
@@ -351,7 +358,10 @@ body
 	&__img
 		float: right
 		padding-right: 90px
-		font-size: 0	
+		font-size: 0
+		+r(w900)
+			width: 50%
+			padding-right: 0	
 		
 // rebill
 .rebill
@@ -370,8 +380,14 @@ body
 			margin-bottom: 15px
 			color: #fff
 			font-size: 16px
+		+r(w900)
+			width: 100% 	
 	&__img
-		font-size: 0		
+		font-size: 0
+		+r(w900)
+			width: 100%
+			img
+				max-width: 100%		
 			
 // payout
 .payout
@@ -379,6 +395,8 @@ body
 	background: url(../img/cards.jpg)
 	overflow: hidden
 	+cover
+	+r(w900)
+		padding: 40px 0 30px 
 	&__inner
 		+clr
 	&__text
@@ -390,6 +408,8 @@ body
 			margin-bottom: 15px
 			color: #fff
 			font-size: 16px
+		+r(w900)
+			width: 100%	
 	&__img
 		position: relative
 		float: left
@@ -399,6 +419,13 @@ body
 			position: relative
 			left: -75px
 			top: -20px
+		+r(w900)
+			width: 100% 
+			text-align: center
+			img
+				max-width: 100%
+				top: 0
+				left: auto	
 			
 // apply
 .apply
@@ -436,6 +463,8 @@ body
 	.h2
 		text-align: left
 		margin-bottom: 60px
+		+r(w900)
+			text-align: center
 	&__list
 		font-size: 0
 	&__item
@@ -479,7 +508,9 @@ body
 		+r(w1024)
 			width: 260px
 			p
-				margin-bottom: 10px	
+				margin-bottom: 10px
+		+r(w900)
+			width: 200px			
 	&__name
 		color: #fa5757
 
@@ -491,10 +522,14 @@ body
 	.h2
 		margin-bottom: 30px
 	&__list
-		+justify	 
+		+justify
+		+r(w900)
+			padding: 0 7% 	 
 	&__item
 		+justify-child
 		color: #fff
+		+r(w900)
+			margin-bottom: 45px
 	&__img
 		position: relative
 		width: 215px
@@ -503,6 +538,8 @@ body
 		overflow: hidden
 		+r(w1024)
 			width: 200px
+		+r(w900)
+			width: 240px 	
 		&:before
 			content: ""
 			position: absolute
@@ -535,11 +572,16 @@ body
 		color: #fff  
 	&__list
 		+justify
+		+r(w900)
+			padding: 0 10% 
 	&__item
 		+justify-child
 		width: 210px
 		+r(w1024)
 			width: 200px
+		+r(w900)
+			width: 250px
+			margin-bottom: 30px	
 	&__img
 		text-align: center
 		margin-bottom: 15px
@@ -564,6 +606,8 @@ body
 	.h2
 		text-align: left
 		margin-bottom: 20px
+		+r(w900)
+			text-align: center
 	&__list
 		font-size: 0
 		margin-left: -5% 
@@ -604,18 +648,31 @@ body
 	.h3
 		text-align: left
 		margin-bottom: 30px
+		+r(w900)
+			text-align: center
 .form
 	+clr
 	width: 828px
 	margin: 0 auto
+	+r(w900)
+		width: auto
 	&__col
 		float: left
 		width: 409px
 		margin-left: 10px
 		&:first-child
 			margin-left: 0
+		+r(w900)
+			float: none
+			margin: 0 auto
+			&:first-child
+				margin: 0 auto 	
 		.btn
-			float: right	  
+			float: right
+			+r(w900)
+				float: none
+				display: block
+				margin: 0 auto 	  
 .input
 	width: 381px
 	height: 43px
