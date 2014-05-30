@@ -80,6 +80,8 @@ body
 	+loveloblack
 	text-align: center
 	color: #fff
+	+r(w768)
+		font-size: 45px
 .h2
 	font-size: 45px
 	+loveloblack
@@ -231,10 +233,14 @@ body
 		+r(w1024)
 			padding-top: 180px
 		+r(w900)
-			padding-top: 100px	
+			padding-top: 100px
+		+r(w768)
+			padding-top: 65px		
 		.h1
 			margin-bottom: 45px
 			+gpu
+			+r(w768)
+				margin-bottom: 10px
 		p
 			text-align: center
 			color: #fff
@@ -282,7 +288,9 @@ body
 	&__list
 		+justify
 		+r(w900)
-			padding: 0 10% 
+			padding: 0 10%
+		+r(w768)
+			padding: 0 	 
 	&__item
 		position: relative
 		+justify-child
@@ -447,7 +455,9 @@ body
 		padding: 0 10px
 		font-family: 'Myriad Pro', sans-serif
 		font-size: 18px
-		color: #4c4c4d  
+		color: #4c4c4d
+		+r(w768)
+			width: 390px   
 .btn
 	width: 125px
 	height: 55px
