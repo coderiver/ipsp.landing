@@ -74,7 +74,9 @@ body
 	padding: 0 30px
 	+r(w1024)
 		width: auto
-		padding: 0 20px    
+		padding: 0 20px
+	+r(w480)
+		padding: 0 10px 	    
 .h1
 	font-size: 60px
 	+loveloblack
@@ -82,6 +84,10 @@ body
 	color: #fff
 	+r(w768)
 		font-size: 45px
+	+r(w568)
+		font-size: 35px
+	+r(w480)
+		font-size: 26px		
 .h2
 	font-size: 45px
 	+loveloblack
@@ -89,6 +95,8 @@ body
 	color: #fff
 	&.h2_dark
 		color: #4c4c4d
+	+r(w568)
+		font-size: 35px
 .h3
 	font-size: 28px
 	+loveloblack
@@ -107,7 +115,12 @@ body
 	right: 0 
 	height: 122px
 	background: #fff
-	z-index: 999 
+	z-index: 999
+	&.is-hidden
+		+opacity(0)
+		&:hover
+			+transition(opacity 400ms ease-in)
+			+opacity(1) 
 	&__tr
 		position: absolute
 		bottom: -37px
@@ -121,6 +134,8 @@ body
 		position: relative
 		+clr
 		padding-top: 20px
+		+r(w480)
+			padding-top: 10px
 .logo
 	position: absolute
 	top: 43px
@@ -136,6 +151,8 @@ body
 		li
 			float: left
 			margin-right: 10px
+			+r(w480)
+				margin-right: 5px
 			a
 				display: block
 				&.en
@@ -150,6 +167,8 @@ body
 	float: right
 	+r(w1024)
 		margin-left: 10px
+	+r(w480)
+		margin-left: 5px
 	a
 		display: block
 		+s(user)
@@ -164,7 +183,10 @@ body
 		cursor: pointer
 		z-index: 2
 		&.is-active
-			+s(menu-active)	
+			+s(menu-active)
+		+r(w480)
+			top: -27px
+			left: 10px		
 	&__list
 		position: relative
 		text-align: center
@@ -187,13 +209,17 @@ body
 						color: #fff
 						&:hover
 							color: #90d7ed
+		+r(w480)
+			padding-top: 80px					
 	&__item
 		display: inline-block
 		vertical-align: middle
 		margin: 0 13px
 		+r(w1024)
 			display: block
-			margin: 0 0 20px 40px 
+			margin: 0 0 20px 40px
+		+r(w480)
+			margin: 0 0 10px 30px 	 
 		a
 			font-size: 18px
 			color: #555556
@@ -216,12 +242,14 @@ body
 	&__item
 		position: relative
 		width: 100%
+		min-height: 300px
 	&__bg
 		height: 100%
 		font-size: 0 
 		img
 			width: 100%
 			height: auto
+			min-height: 300px
 	&__inner
 		position: absolute
 		top: 0
@@ -240,11 +268,13 @@ body
 			margin-bottom: 45px
 			+gpu
 			+r(w768)
-				margin-bottom: 10px
+				margin-bottom: 10px	
 		p
 			text-align: center
 			color: #fff
-			font-size: 16px	  		
+			font-size: 16px
+			+r(w568)
+				font-size: 13px	  		
 .cycle-pager
 	position: absolute
 	bottom: 25px
@@ -278,6 +308,8 @@ body
 	&:hover
 		background: url(../img/join.png) 0 0 no-repeat
 		font-size: 0
+	+r(w480)
+		margin-bottom: 35px	
 
 // services
 .services
@@ -290,7 +322,9 @@ body
 		+r(w900)
 			padding: 0 10%
 		+r(w768)
-			padding: 0 	 
+			padding: 0
+		+r(w480)
+			text-align: center	 	 
 	&__item
 		position: relative
 		+justify-child
@@ -301,7 +335,14 @@ body
 			width: 200px
 		+r(w900)
 			width: 255px
-			margin-bottom: 24px	
+			margin-bottom: 24px
+		+r(w600)
+			width: 240px
+			margin-bottom: 20px
+		+r(w568)
+			width: 200px
+		+r(w480)
+			width: 80%				
 		&:before
 			content: ""
 			position: absolute
@@ -363,13 +404,29 @@ body
 			margin-bottom: 25px 		
 			color: #fff
 			font-size: 16px
+		+r(w568)
+			width: 50%
+			.h3
+				text-align: left
+		+r(w480)
+			width: 100%		
 	&__img
 		float: right
 		padding-right: 90px
 		font-size: 0
 		+r(w900)
 			width: 50%
-			padding-right: 0	
+			padding-right: 0
+		+r(w568)
+			width: 45%
+			padding-top: 50px
+			img
+				width: 100%
+		+r(w480)
+			float: none
+			width: 60%
+			margin: 0 auto
+			padding-top: 10px 		 		
 		
 // rebill
 .rebill
@@ -384,6 +441,8 @@ body
 		width: 45%
 		.h3
 			margin-bottom: 15px
+			+r(w568)
+				text-align: left
 		p
 			margin-bottom: 15px
 			color: #fff
@@ -412,6 +471,8 @@ body
 		width: 45% 
 		.h3
 			margin-bottom: 15px
+			+r(w568)
+				text-align: left
 		p
 			margin-bottom: 15px
 			color: #fff
@@ -457,7 +518,12 @@ body
 		font-size: 18px
 		color: #4c4c4d
 		+r(w768)
-			width: 390px   
+			width: 390px
+		+r(w600)
+			margin-bottom: 15px
+		+r(w480)
+			width: 100%
+			+box		   
 .btn
 	width: 125px
 	height: 55px
@@ -466,6 +532,9 @@ body
 	+loveloblack
 	font-size: 28px
 	color: #fff
+	+transition(background 200ms)
+	&:hover
+		background: darken(#4ec0b4, 5%) 
 		
 // clients
 .clients
@@ -483,6 +552,8 @@ body
 		width: 50%
 		+clr
 		margin-bottom: 50px
+		+r(w768)
+			width: 100% 
 	&__img
 		position: relative
 		float: left
@@ -520,7 +591,10 @@ body
 			p
 				margin-bottom: 10px
 		+r(w900)
-			width: 200px			
+			width: 200px
+		+r(w768)
+			width: auto
+			float: none 				
 	&__name
 		color: #fa5757
 
@@ -534,7 +608,11 @@ body
 	&__list
 		+justify
 		+r(w900)
-			padding: 0 7% 	 
+			padding: 0 5%
+		+r(w600)
+			padding: 0
+		+r(w480)
+			text-align: center	 	 	 
 	&__item
 		+justify-child
 		color: #fff
@@ -549,7 +627,13 @@ body
 		+r(w1024)
 			width: 200px
 		+r(w900)
-			width: 240px 	
+			width: 240px
+		+r(w600)
+			width: 218px
+		+r(w568)
+			width: 200px
+		+r(w480)
+			width: 240px			 	
 		&:before
 			content: ""
 			position: absolute
@@ -583,7 +667,11 @@ body
 	&__list
 		+justify
 		+r(w900)
-			padding: 0 10% 
+			padding: 0 10%
+		+r(w768)
+			padding: 0 2%
+		+r(w600)
+			padding: 0 	 	 
 	&__item
 		+justify-child
 		width: 210px
@@ -591,13 +679,17 @@ body
 			width: 200px
 		+r(w900)
 			width: 250px
-			margin-bottom: 30px	
+			margin-bottom: 30px
+		+r(w568)
+			width: auto		
 	&__img
 		text-align: center
 		margin-bottom: 15px
 	.h3
 		text-align: left
 		margin-bottom: 10px
+		+r(w568)
+			text-align: center
 	&__text
 		text-align: left
 		line-height: 1.3
@@ -620,13 +712,18 @@ body
 			text-align: center
 	&__list
 		font-size: 0
-		margin-left: -5% 
+		margin-left: -5%
+		+r(w568)
+			margin-left: 0 
 	&__item
 		display: inline-block
 		vertical-align: top
 		width: 45%
 		margin-left: 5%
 		font-size: 16px
+		+r(w568)
+			width: auto
+			margin-left: 0
 		article
 			color: #5a5a5b
 			p
@@ -682,7 +779,9 @@ body
 			+r(w900)
 				float: none
 				display: block
-				margin: 0 auto 	  
+				margin: 0 auto
+		+r(w480)
+			width: 100%			 	  
 .input
 	width: 381px
 	height: 43px
@@ -697,6 +796,9 @@ body
 		font-family: 'Myriad Pro', sans-serif
 		font-size: 16px
 		color: #5a5a5b
+	+r(w480)
+		width: 100%
+		+box	
 .textarea
 	display: block
 	resize: none
@@ -712,6 +814,9 @@ body
 		font-family: 'Myriad Pro', sans-serif
 		font-size: 16px
 		color: #5a5a5b
+	+r(w480)
+		width: 100%
+		+box	
 .select
 	position: relative
 	&__text
@@ -768,9 +873,13 @@ body
 	&__left
 		float: left
 		width: 50%
+		+r(w768)
+			width: 45%
 	&__right
 		float: right
 		width: 280px
+		+r(w768)
+			width: 45%
 	&__item
 		margin-bottom: 30px 	  		
 .copyrights

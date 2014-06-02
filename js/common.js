@@ -93,9 +93,22 @@ head.ready(function() {
 	}
 	menu_dropdown();
 
+// menu scroll hide
+
+	function menu_hide(){
+		if($(window).scrollTop() > 122){
+			$(".header").addClass('is-hidden');
+		}
+		else{
+			$(".header").removeClass('is-hidden');
+		}
+	}
+	menu_hide();
+
+
 
 	$(window).scroll(function(){
-    	
+    	menu_hide();
     });
 
 	$(window).resize(function(){
