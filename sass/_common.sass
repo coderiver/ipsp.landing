@@ -116,10 +116,11 @@ body
 	height: 122px
 	background: #fff
 	z-index: 999
+	+transition(opacity 250ms)
+	+gpu
 	&.is-hidden
 		+opacity(0)
 		&:hover
-			+transition(opacity 400ms ease-in)
 			+opacity(1) 
 	&__tr
 		position: absolute
@@ -400,6 +401,7 @@ body
 		padding-top: 50px
 		.h3
 			margin-bottom: 25px
+			text-align: left
 		p
 			margin-bottom: 25px 		
 			color: #fff
@@ -441,6 +443,7 @@ body
 		width: 45%
 		.h3
 			margin-bottom: 15px
+			text-align: left
 			+r(w568)
 				text-align: left
 		p
@@ -471,6 +474,7 @@ body
 		width: 45% 
 		.h3
 			margin-bottom: 15px
+			text-align: left
 			+r(w568)
 				text-align: left
 		p
@@ -559,6 +563,7 @@ body
 		float: left
 		width: 135px
 		height: 115px
+		padding-top: 5px
 		overflow: hidden
 		&:before
 			content: ""

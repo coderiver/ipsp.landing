@@ -27,6 +27,7 @@ head.ready(function() {
 	$(".js-slider").cycle({
 		timeout: 4000,
 		slides: '> div',
+		speed: 800,
 		pager: '.cycle-pager'
 	});
 
@@ -105,6 +106,28 @@ head.ready(function() {
 	}
 	menu_hide();
 
+//menu navigation
+		
+		function scrollNav(){
+    	    $('.js-section').each(function(){
+    	        var pos = $(this).offset().top;
+    	        var id = $(this).attr('id');
+    	        if( $(window).scrollTop() >= (pos - 89)){
+    	            $('.menu__list li a').removeClass('is-active');
+    	            $('[href = #'+id+']').addClass('is-active');
+    	        }
+    	    });
+    	}
+
+		$(".menu__list a").click(function (){
+    	    var page = $(this).attr("href");
+    	
+    	    $('html, body').animate({
+    	        scrollTop: $(page).offset().top - 145
+    	    }, 500);
+    	    return false;
+    	});
+	
 
 
 	$(window).scroll(function(){
