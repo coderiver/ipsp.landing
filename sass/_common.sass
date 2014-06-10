@@ -142,7 +142,9 @@ body
 	top: 43px
 	left: 50%
 	margin-left: -87px
-	+s(logo) 					  
+	//+s(logo)
+	+svg(logo, 172, 78)
+	z-index: 2 					  
 .lang 
 	float: left
 	+r(w1024)
@@ -157,13 +159,13 @@ body
 			a
 				display: block
 				&.en
-					+s(en)
+					+svg(en, 28, 28)
 					&.is-active
-						+s(en-active)
+						+svg(en-active, 28, 28)
 				&.ru
-					+s(ru)
+					+svg(ru, 28, 28)
 					&.is-active
-						+s(ru-active)
+						+svg(ru-active, 28, 28)
 .user
 	float: right
 	+r(w1024)
@@ -172,7 +174,7 @@ body
 		margin-left: 5px
 	a
 		display: block
-		+s(user)
+		+svg(user, 28, 28)
 .menu
 	position: relative
 	&__btn
@@ -307,7 +309,7 @@ body
 	text-transform: uppercase
 	text-decoration: none
 	&:hover
-		background: url(../img/join.png) 0 0 no-repeat
+		background: url(../img/svg/join.svg) 0 -3px no-repeat
 		font-size: 0
 	+r(w480)
 		margin-bottom: 35px	
@@ -690,6 +692,13 @@ body
 	&__img
 		text-align: center
 		margin-bottom: 15px
+		img
+			width: 62px
+			height: 62px
+			&.applynow
+				width: 64px
+			&.agent
+				height: 64px	
 	.h3
 		text-align: left
 		margin-bottom: 10px
